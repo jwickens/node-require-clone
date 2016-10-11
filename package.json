@@ -1,6 +1,6 @@
 {
   "name": "require-clone",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "require a module without caching (get a complete new instance of the module)",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,8 @@
   },
   "keywords": [
     "require",
-    "clone"
+    "clone",
+    "cachin"
   ],
   "jshintConfig": {
     "esversion": 6
@@ -18,8 +19,5 @@
   "devDependencies": {
     "mocha": "^3.1.2",
     "should": "^11.1.1"
-  },
-  "dependencies": {
-    "stack-trace": "0.0.9"
   }
 }

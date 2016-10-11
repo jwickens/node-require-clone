@@ -6,4 +6,4 @@ module.exports = function(filename) {
 };
 
 // delete this module from the cache so that the parent module is up to date
-delete require.cache(__filename);
+delete require.cache[__filename];
