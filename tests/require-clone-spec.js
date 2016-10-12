@@ -29,4 +29,9 @@ describe("require-clone", function() {
         b.should.be.type('number');
         a.should.not.equal(b);
     });
+
+    it("loads native modules as normal", function() {
+      var shouldBeTrue = requireClone('./native-test-module.js');
+      shouldBeTrue.should.equal(true);
+    })
 });
