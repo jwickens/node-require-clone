@@ -58,4 +58,21 @@ describe("require-clone", function() {
           b.should.be.type('number');
           a.should.not.equal(b);
     });
+
+    it("works with loading directories", function() {
+        var a = requireClone("./package");
+        var b = requireClone("./package");
+        a.a.should.be.type('number');
+        a.b.should.be.type('number');
+        a.c.should.be.type('number');
+        a.d.should.be.type('number');
+        b.a.should.be.type('number');
+        b.b.should.be.type('number');
+        b.c.should.be.type('number');
+        b.d.should.be.type('number');
+        a.a.should.not.equal(b.a);
+        a.b.should.not.equal(b.b);
+        a.c.should.not.equal(b.c);
+        a.d.should.not.equal(b.d);
+    })
 });
