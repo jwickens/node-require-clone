@@ -33,5 +33,13 @@ describe("require-clone", function() {
     it("loads native modules as normal", function() {
       var shouldBeTrue = requireClone('./native-test-module.js');
       shouldBeTrue.should.equal(true);
-    })
+    });
+
+    it("handles relative paths for children alright", function() {
+        var a = requireClone("./relative/parent-relative-test-module");
+        var b = requireClone("./relative/parent-relative-test-module");
+        a.should.be.type('number');
+        b.should.be.type('number');
+        a.should.not.equal(b);
+    });
 });
