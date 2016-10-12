@@ -10,6 +10,14 @@ describe("require", function() {
         b.should.be.type('number');
         a.should.equal(b);
   });
+
+  it("handles circular requires ok", function() {
+        var a = require("./circular-a-test-module");
+        var b = require("./circular-b-test-module");
+        a.should.be.type('number');
+        b.should.be.type('number');
+        a.should.equal(b);
+  });
 });
 
 describe("require-clone", function() {
@@ -41,5 +49,13 @@ describe("require-clone", function() {
         a.should.be.type('number');
         b.should.be.type('number');
         a.should.not.equal(b);
+    });
+
+    it("handles circular requires ok", function() {
+          var a = requireClone("./circular-a-test-module");
+          var b = requireClone("./circular-b-test-module");
+          a.should.be.type('number');
+          b.should.be.type('number');
+          a.should.not.equal(b);
     });
 });
