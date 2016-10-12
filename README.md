@@ -1,6 +1,6 @@
 # require-clone
 
-Get a completely clean copy of a module or package and all its dependencies (except native ones). Use it like you use require.
+Get a completely clean copy of a module or package and all its internal dependencies. Use it like you use require.
 
 ## Usage
 
